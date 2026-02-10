@@ -20,6 +20,7 @@ def run_command(cmd, cwd=None):
     return True, result.stdout
 
 @app.post("/debianize")
+@app.post("/debianize/")
 async def debianize(request: DebianizeRequest):
     target_path = Path(request.path)
 

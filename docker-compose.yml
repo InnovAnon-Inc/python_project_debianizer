@@ -11,12 +11,12 @@ services:
       - VIRTUAL_HOST=python_project_debianizer.innovanon.com
       - VIRTUAL_PORT=9322
 #      - PROFILE_DIR=/var/lib/chimera/profiles
-#    volumes:
-#      - python_project_debianizer-profiles:/var/lib/chimera/profiles
+    volumes:
+      - python_project_cloner-repos:/mnt/shared
 #    depends_on:
 #      - ssl-companion
 
 #volumes:
-#  python_project_debianizer-profiles:
+#  python_project_cloner-repos
 
 
