@@ -39,4 +39,5 @@ RUN pip install --no-cache-dir .
 #RUN pip install --no-cache-dir *.whl \
 #&&  rm -v *.whl
 
-ENTRYPOINT ["python", "-u", "-m", "python_project_debianizer"]
+#ENTRYPOINT ["python", "-u", "-m", "python_project_debianizer"]
+ENTRYPOINT ["uvicorn", "python_project_debianizer.python_project_debianizer:app", "--host", "0.0.0.0", "--port", "9322"]

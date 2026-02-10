@@ -51,3 +51,8 @@ async def debianize(request: DebianizeRequest):
 @app.get("/health")
 async def health():
     return {"status": "online", "service": "python_project_debianizer"}
+
+@app.api_route("/{path_name:path}", methods=["GET", "POST"])
+async def catch_all(path_name: str):
+    print(f"DEBUG: Caught a request to: /{path_name}")
+    return {"error": "Not Found", "requested_path": path_name}
