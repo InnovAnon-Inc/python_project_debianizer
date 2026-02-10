@@ -40,6 +40,7 @@ async def debianize(request: Request):
     (target_path / "debian/source").mkdir(parents=True, exist_ok=True)
 
     # [Insert your Rules/Changelog writing logic here]
+    # TODO use template file like the others ?
     # DUMMY CHANGELOG: Required by dpkg-buildpackage
     changelog_path = debian_dir / "changelog"
     if not changelog_path.exists():
