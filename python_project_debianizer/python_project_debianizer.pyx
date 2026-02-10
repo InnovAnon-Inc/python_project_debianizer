@@ -1,6 +1,8 @@
 # python_project_debianizer
 # handles -march= / -mtune= architecture-specific distribution
 
+# FIXME just don't work
+
 import os
 import subprocess
 from pathlib import Path
