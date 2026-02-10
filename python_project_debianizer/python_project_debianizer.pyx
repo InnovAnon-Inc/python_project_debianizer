@@ -40,6 +40,17 @@ async def debianize(request: Request):
     (target_path / "debian/source").mkdir(parents=True, exist_ok=True)
 
     # [Insert your Rules/Changelog writing logic here]
+    # DUMMY CHANGELOG: Required by dpkg-buildpackage
+    changelog_path = debian_dir / "changelog"
+    if not changelog_path.exists():
+        print("📝 Generating dummy changelog...")
+        content = f"""{project_name} (0.0.1) unstable; urgency=low
+
+  * Initial automated build.
+
+ -- Frederick <frederick@lunchbox>  {subprocess.getoutput('date -R')}
+"""
+        changelog_path.write_text(content)
 
     # 2. Execution
     # -S = Source only, -d = skip build-dep check
